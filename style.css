@@ -1,0 +1,75 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #faf8ef;
+  font-family: "Helvetica Neue", Arial, "PingFang SC", "Microsoft YaHei", sans-serif;
+  color: #776e65;
+  padding: 20px;
+}
+
+.game-container {
+  width: 100%;
+  max-width: 480px;
+}
+
+.game-header {
+  margin-bottom: 16px;
+}
+
+.title {
+  margin: 0;
+  font-size: 56px;
+  font-weight: 800;
+  letter-spacing: 2px;
+}
+
+.subtitle {
+  margin: 8px 0 0;
+  font-size: 14px;
+  color: #8f857c;
+}
+
+.board {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(4, 1fr);
+  gap: 12px;
+  background: #bbada0;
+  border-radius: 10px;
+  padding: 12px;
+  width: 100%;
+  aspect-ratio: 1 / 1;
+}
+
+.tile {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 6px;
+  background: #cdc1b4;
+  font-size: 40px;
+  font-weight: 700;
+  line-height: 1;
+  user-select: none;
+  transition: background 0.1s ease, color 0.1s ease;
+}
+
+.tile-2    { background: #eee4da; color: #776e65; }
+.tile-4    { background: #ede0c8; color: #776e65; }
+.tile-8    { background: #f2b179; color: #f9f6f2; }
+.tile-16   { background: #f59563; color: #f9f6f2; }
+.tile-32   { background: #f67c5f; color: #f9f6f2; }
+.tile-64   { background: #f65e3b; color: #f9f6f2; }
+.tile-128  { background: #edcf72; color: #f9f6f2; font-size: 34px; }
+.tile-256  { background: #edcc61; color: #f9f6f2; font-size: 34px; }
+.tile-512  { background: #edc850; color: #f9f6f2; font-size: 34px; }
+.tile-1024 { background: #edc53f; color: #f9f6f2; font-size: 27px; }
+.tile-2048 { background: #edc22e; color: #f9f6f2; font-size: 27px; }
+.tile-super { background: #3c3a32; color: #f9f6f2; font-size: 23px; }
