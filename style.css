@@ -23,6 +23,14 @@ body {
   margin-bottom: 16px;
 }
 
+.header-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
 .title {
   margin: 0;
   font-size: 56px;
@@ -30,10 +38,64 @@ body {
   letter-spacing: 2px;
 }
 
+.score-panel {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.score-box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-width: 84px;
+  padding: 6px 14px;
+  background: #bbada0;
+  border-radius: 8px;
+  color: #f9f6f2;
+}
+
+.score-label {
+  font-size: 12px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  opacity: 0.85;
+}
+
+.score-value {
+  font-size: 24px;
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+.restart-btn {
+  padding: 10px 16px;
+  border: none;
+  border-radius: 8px;
+  background: #8f7a66;
+  color: #f9f6f2;
+  font-size: 14px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: background 0.15s ease, transform 0.1s ease;
+}
+
+.restart-btn:hover {
+  background: #9f8b77;
+}
+
+.restart-btn:active {
+  transform: scale(0.97);
+}
+
 .subtitle {
   margin: 8px 0 0;
   font-size: 14px;
   color: #8f857c;
+}
+
+.board-wrapper {
+  position: relative;
 }
 
 .board {
@@ -73,3 +135,43 @@ body {
 .tile-1024 { background: #edc53f; color: #f9f6f2; font-size: 27px; }
 .tile-2048 { background: #edc22e; color: #f9f6f2; font-size: 27px; }
 .tile-super { background: #3c3a32; color: #f9f6f2; font-size: 23px; }
+
+.overlay {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 18px;
+  padding: 24px;
+  text-align: center;
+  background: rgba(250, 248, 239, 0.86);
+  border-radius: 10px;
+  z-index: 10;
+  transition: opacity 0.2s ease;
+}
+
+.overlay.hidden {
+  display: none;
+}
+
+.overlay-message {
+  margin: 0;
+  font-size: 32px;
+  font-weight: 800;
+  color: #776e65;
+}
+
+.overlay-message.overlay-win {
+  color: #edc22e;
+}
+
+.overlay-message.overlay-lose {
+  color: #776e65;
+}
+
+.overlay-actions {
+  display: flex;
+  gap: 12px;
+}

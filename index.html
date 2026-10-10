@@ -9,11 +9,28 @@
 <body>
   <main class="game-container">
     <header class="game-header">
-      <h1 class="title">2048</h1>
+      <div class="header-top">
+        <h1 class="title">2048</h1>
+        <div class="score-panel">
+          <div class="score-box">
+            <span class="score-label">分数</span>
+            <span id="score" class="score-value">0</span>
+          </div>
+          <button id="restart" class="restart-btn" type="button">重新开始</button>
+        </div>
+      </div>
       <p class="subtitle">使用方向键或 WASD 移动方块</p>
     </header>
 
-    <div id="board" class="board" aria-label="2048 游戏棋盘"></div>
+    <div class="board-wrapper">
+      <div id="board" class="board" aria-label="2048 游戏棋盘"></div>
+      <div id="overlay" class="overlay hidden" role="status" aria-live="polite">
+        <p id="overlay-message" class="overlay-message"></p>
+        <div class="overlay-actions">
+          <button id="overlay-button" class="restart-btn" type="button">再玩一次</button>
+        </div>
+      </div>
+    </div>
   </main>
 
   <script src="script.js"></script>
